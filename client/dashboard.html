@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - E-Sports Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎮 E-Sports Hub</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Team Registration</a></li>
+                <li><a href="player-registration.html">Player Registration</a></li>
+                <li><a href="lineup-registration.html">Lineup Registration</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Dashboard</h1>
+
+        <div class="dashboard-tabs">
+            <button class="tab-btn active" data-tab="teams">Teams</button>
+            <button class="tab-btn" data-tab="players">Players</button>
+            <button class="tab-btn" data-tab="matches">Matches</button>
+        </div>
+
+        <div class="tab-content active" id="teams">
+            <div class="section-header">
+                <h2>Registered Teams</h2>
+                <button class="btn btn-primary" onclick="location.href='register.html'">+ Add Team</button>
+            </div>
+            <div id="teamsList" class="data-grid"></div>
+        </div>
+
+        <div class="tab-content" id="players">
+            <div class="section-header">
+                <h2>Registered Players</h2>
+                <button class="btn btn-primary" onclick="location.href='player-registration.html'">+ Add Player</button>
+            </div>
+            <div id="playersList" class="data-grid"></div>
+        </div>
+
+        <div class="tab-content" id="matches">
+            <div class="section-header">
+                <h2>Matches</h2>
+                <button class="btn btn-primary" onclick="showMatchForm()">+ Create Match</button>
+            </div>
+            <div id="matchForm" class="form-container" style="display: none; margin-bottom: 20px;">
+                <form id="createMatchForm" class="registration-form">
+                    <div class="form-group">
+                        <label for="match_name">Match Name *</label>
+                        <input type="text" id="match_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="match_game">Game *</label>
+                        <select id="match_game" required>
+                            <option value="">Select a game</option>
+                            <option value="Valorant">Valorant</option>
+                            <option value="League of Legends">League of Legends</option>
+                            <option value="Dota 2">Dota 2</option>
+                            <option value="CS:GO">CS:GO</option>
+                            <option value="Mobile Legends">Mobile Legends</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="match_date">Match Date *</label>
+                        <input type="datetime-local" id="match_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="venue">Venue</label>
+                        <input type="text" id="venue" placeholder="Online or Physical Location">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Match</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideMatchForm()">Cancel</button>
+                </form>
+            </div>
+            <div id="matchesList" class="data-grid"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 E-Sports Registration System. All rights reserved.</p>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

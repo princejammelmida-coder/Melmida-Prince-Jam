@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Registration - E-Sports Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎮 E-Sports Hub</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html" class="active">Team Registration</a></li>
+                <li><a href="player-registration.html">Player Registration</a></li>
+                <li><a href="lineup-registration.html">Lineup Registration</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Team Registration</h1>
+            <p class="subtitle">Register your esports team to participate in tournaments</p>
+
+            <form id="teamForm" class="registration-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="team_name">Team Name *</label>
+                    <input type="text" id="team_name" placeholder="Enter team name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="captain_name">Captain Name *</label>
+                    <input type="text" id="captain_name" placeholder="Enter captain name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" placeholder="Enter email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="game">Game *</label>
+                    <select id="game" required>
+                        <option value="">Select a game</option>
+                        <option value="Valorant">Valorant</option>
+                        <option value="League of Legends">League of Legends</option>
+                        <option value="Dota 2">Dota 2</option>
+                        <option value="CS:GO">CS:GO</option>
+                        <option value="Mobile Legends">Mobile Legends</option>
+                        <option value="PUBG Mobile">PUBG Mobile</option>
+                        <option value="Overwatch">Overwatch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="team_logo">Team Logo (Optional)</label>
+                    <input type="file" id="team_logo" accept="image/*">
+                    <small style="color: #9ca3af; margin-top: 0.5rem; display: block;">Upload an image file (JPG, PNG, GIF - Max 5MB)</small>
+                    <div id="logoPreview" style="margin-top: 1rem; display: none;">
+                        <img id="previewImage" style="max-width: 200px; max-height: 200px; border-radius: 8px; border: 2px solid var(--border-color);">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Register Team</button>
+            </form>
+
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 E-Sports Registration System. All rights reserved.</p>
+    </footer>
+
+    <script src="js/registerTeam.js"></script>
+</body>
+</html>

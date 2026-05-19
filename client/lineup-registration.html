@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineup Registration - E-Sports Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎮 E-Sports Hub</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Team Registration</a></li>
+                <li><a href="player-registration.html">Player Registration</a></li>
+                <li><a href="lineup-registration.html" class="active">Lineup Registration</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Match Lineup Registration</h1>
+            <p class="subtitle">Register players for match lineups</p>
+
+            <form id="lineupForm" class="registration-form">
+                <div class="form-group">
+                    <label for="match_id">Select Match *</label>
+                    <select id="match_id" required>
+                        <option value="">Loading matches...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="team_id">Select Team *</label>
+                    <select id="team_id" required>
+                        <option value="">Select a match first</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="player_id">Select Player *</label>
+                    <select id="player_id" required>
+                        <option value="">Select a team first</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Position/Role</label>
+                    <input type="text" id="position" placeholder="e.g., Position 1, Mid Lane, Entry Fragger">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="is_substitute">
+                        <span>This player is a substitute</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Add to Lineup</button>
+            </form>
+
+            <div id="message" class="message"></div>
+
+            <div class="lineup-preview" id="lineupPreview" style="display: none;">
+                <h2>Current Lineup</h2>
+                <div id="lineupList"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 E-Sports Registration System. All rights reserved.</p>
+    </footer>
+
+    <script src="js/registerLineup.js"></script>
+</body>
+</html>

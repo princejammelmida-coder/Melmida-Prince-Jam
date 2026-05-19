@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Registration - E-Sports Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎮 E-Sports Hub</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Team Registration</a></li>
+                <li><a href="player-registration.html" class="active">Player Registration</a></li>
+                <li><a href="lineup-registration.html">Lineup Registration</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Player Registration</h1>
+            <p class="subtitle">Add players to your team</p>
+
+            <form id="playerForm" class="registration-form">
+                <div class="form-group">
+                    <label for="team_id">Select Team *</label>
+                    <select id="team_id" required>
+                        <option value="">Loading teams...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="player_name">Player Name *</label>
+                    <input type="text" id="player_name" placeholder="Enter player name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="game_username">Game Username *</label>
+                    <input type="text" id="game_username" placeholder="Enter in-game username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" placeholder="Enter email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Player Role *</label>
+                    <input type="text" id="role" placeholder="e.g., Duelist, Support, Mid Laner" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Register Player</button>
+            </form>
+
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 E-Sports Registration System. All rights reserved.</p>
+    </footer>
+
+    <script src="js/registerPlayer.js"></script>
+</body>
+</html>
